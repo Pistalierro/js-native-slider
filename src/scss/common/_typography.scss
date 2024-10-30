@@ -1,17 +1,17 @@
-body {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+@use "../presets/variables" as *;
+@use "../presets/skin" as *;
 
-	min-height: 100vh;
-
-	background-color: green;
+*::before,
+*::after,
+* {
+	box-sizing: border-box;
 }
 
+body {
+	margin: 0;
+	font-size: $font-size;
+}
 
-h1 {
-	font-size: 2rem;
-	color: #ffffff;
-	letter-spacing: 0.1em;
-	text-transform: uppercase;
+a {
+	text-decoration: none;
 }
