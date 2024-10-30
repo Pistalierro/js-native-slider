@@ -1,2 +1,29 @@
 @use "../presets/variables" as *;
 @use "../presets/skin" as *;
+@use "../mixins/mixins" as *;
+
+.controls {
+	display: flex;
+	gap: $gap;
+	justify-content: center;
+}
+
+.control {
+	cursor: pointer;
+	display: block;
+	padding: 0.2em 1em;
+	border: 1px solid $color-deep-dark;
+	border-radius: 4px;
+	transition: all .25s ease-in-out;
+	min-width: $gap-x4;
+	text-align: center;
+	user-select: none;
+	@include box-shadow(0, 0, $gap-sm, $color-gray-dark);
+
+	&:hover,
+	&:focus {
+		background-color: $color-gray-dark;
+		color: $color-light;
+		border-color: $color-gray-dark;
+	}
+}

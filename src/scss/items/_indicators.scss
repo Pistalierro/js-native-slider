@@ -1,2 +1,28 @@
 @use "../presets/variables" as *;
 @use "../presets/skin" as *;
+@use "../mixins/extends" as *;
+@use "../mixins/mixins" as *;
+
+.indicators {
+	position: absolute;
+	bottom: $gap-x3;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	gap: $gap;
+}
+
+.indicator {
+	height: calc(($gap-sm / 5) * 3);
+	width: $gap-x2;
+	background-color: transparent;
+	border: 1px solid $color-light;
+	border-radius: 4px;
+	cursor: pointer;
+	user-select: none;
+	@include box-shadow(0, 0, $gap-sm, $color-light);
+
+	&.active {
+		background-color: $color-gray-light;
+	}
+}

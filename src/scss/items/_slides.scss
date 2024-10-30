@@ -1,12 +1,11 @@
 @use "../presets/variables" as *;
 @use "../presets/skin" as *;
+@use "../mixins/mixins" as *;
 
 .slides {
 	position: relative;
-	height: 150px;
-	padding: 0;
-	margin: 0;
-	list-style-type: none;
+	height: $gap-x5 * 2;
+	@include list-none($gap 0 $gap 0);
 }
 
 .slide {
@@ -14,7 +13,7 @@
 	inset: 0;
 	opacity: 0;
 	z-index: -9999;
-	transition: opacity .25s;
+	transition: all .25s;
 
 	display: flex;
 	align-items: center;

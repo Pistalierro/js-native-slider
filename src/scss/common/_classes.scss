@@ -1,7 +1,11 @@
 @use "../presets/variables" as *;
 @use "../presets/skin" as *;
+@use "../mixins/extends" as *;
 
 .container {
-	width: min(100% - $gap * 2, $container-size);
-	margin-inline: auto;
+	@extend %container;
+}
+
+.carousel {
+	position: relative;
 }

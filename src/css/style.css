@@ -360,14 +360,94 @@ a {
   margin-inline: auto;
 }
 
+.carousel {
+  position: relative;
+}
+
+.controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+
+  gap: 20px;
+}
+
+.control {
+  display: block;
+
+  min-width: 80px;
+  padding: 0.2em 1em;
+
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  text-align: center;
+
+  border: 1px solid #191919;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 0 10px #6f6f6f;
+          box-shadow: 0 0 10px #6f6f6f;
+}
+.control:hover,
+.control:focus {
+  color: #ffffff;
+  border-color: #6f6f6f;
+  background-color: #6f6f6f;
+}
+
+.indicators {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
+  display: flex;
+
+  -webkit-transform: translateX(-50%);
+
+      -ms-transform: translateX(-50%);
+
+          transform: translateX(-50%);
+
+  gap: 20px;
+}
+
+.indicator {
+  width: 40px;
+  height: 6px;
+
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  background-color: transparent;
+  -webkit-box-shadow: 0 0 10px #ffffff;
+          box-shadow: 0 0 10px #ffffff;
+}
+.indicator.active {
+  background-color: #f4f4f4;
+}
+
 .slides {
   position: relative;
 
-  height: 150px;
-  margin: 0;
+  height: 200px;
+  margin: 20px 0 20px 0;
   padding: 0;
-
-  list-style-type: none;
 }
 
 .slide {
@@ -391,9 +471,9 @@ a {
           box-sizing: border-box;
   padding: 40px;
 
-  -webkit-transition: opacity 0.25s;
+  -webkit-transition: all 0.25s;
 
-  transition: opacity 0.25s;
+  transition: all 0.25s;
 
   opacity: 0;
   color: #ffffff;
