@@ -1,0 +1,32 @@
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+
+  min-height: 100vh;
+
+  background-color: green;
+}
+
+h1 {
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  color: #ffffff;
+
+  font-size: 2rem;
+}
+
+.test {
+  display: block;
+
+  width: 500px;
+
+  font-size: 2rem;
+}
