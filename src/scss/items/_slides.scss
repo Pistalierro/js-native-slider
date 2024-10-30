@@ -1,2 +1,52 @@
 @use "../presets/variables" as *;
 @use "../presets/skin" as *;
+
+.slides {
+	position: relative;
+	height: 150px;
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+
+.slide {
+	position: absolute;
+	inset: 0;
+	opacity: 0;
+	z-index: -9999;
+	transition: opacity .25s;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	font-size: $gap-x2;
+	padding: $gap-x2;
+	box-sizing: border-box;
+	background: #333;
+	color: #fff;
+
+	&.active {
+		opacity: 1;
+	}
+
+	&:nth-of-type(1) {
+		background: red;
+	}
+
+	&:nth-of-type(2) {
+		background: orange;
+	}
+
+	&:nth-of-type(3) {
+		background: green;
+	}
+
+	&:nth-of-type(4) {
+		background: blue;
+	}
+
+	&:nth-of-type(5) {
+		background: purple;
+	}
+}

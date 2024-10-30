@@ -1,2 +1,7 @@
 @use "../presets/variables" as *;
 @use "../presets/skin" as *;
+
+.container {
+	width: min(100% - $gap * 2, $container-size);
+	margin-inline: auto;
+}

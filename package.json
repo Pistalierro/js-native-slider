@@ -26,6 +26,7 @@
     "sort-css-media-queries": "^2.4.0"
   },
   "dependencies": {
-    "gulp-eslint": "^6.0.0"
+    "gulp-eslint": "^6.0.0",
+    "normalize.css": "^8.0.1"
   }
 }
