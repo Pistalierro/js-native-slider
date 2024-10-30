@@ -378,7 +378,6 @@ a {
 .control {
   display: block;
 
-  min-width: 80px;
   padding: 0.2em 1em;
 
   cursor: pointer;
@@ -391,7 +390,7 @@ a {
   text-align: center;
 
   border: 1px solid #191919;
-  border-radius: 4px;
+  border-radius: 10px;
   -webkit-box-shadow: 0 0 10px #6f6f6f;
           box-shadow: 0 0 10px #6f6f6f;
 }
@@ -435,11 +434,11 @@ a {
   border: 1px solid #ffffff;
   border-radius: 4px;
   background-color: transparent;
-  -webkit-box-shadow: 0 0 10px #ffffff;
-          box-shadow: 0 0 10px #ffffff;
 }
 .indicator.active {
   background-color: #f4f4f4;
+  -webkit-box-shadow: 0 0 10px #ffffff;
+          box-shadow: 0 0 10px #ffffff;
 }
 
 .slides {
@@ -453,22 +452,11 @@ a {
 .slide {
   position: absolute;
   z-index: -9999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 
-  display: -webkit-box;
-
-  display: -ms-flexbox;
-
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-
-  -webkit-box-sizing: border-box;
-
-          box-sizing: border-box;
   padding: 40px;
 
   -webkit-transition: all 0.25s;
@@ -476,28 +464,13 @@ a {
   transition: all 0.25s;
 
   opacity: 0;
-  color: #ffffff;
   background: #333333;
+  background: #165690;
+  background-position: 50% 50%;
+  background-size: cover;
 
   font-size: 40px;
-
-  inset: 0;
 }
 .slide.active {
   opacity: 1;
-}
-.slide:nth-of-type(1) {
-  background: red;
-}
-.slide:nth-of-type(2) {
-  background: orange;
-}
-.slide:nth-of-type(3) {
-  background: green;
-}
-.slide:nth-of-type(4) {
-  background: blue;
-}
-.slide:nth-of-type(5) {
-  background: purple;
 }

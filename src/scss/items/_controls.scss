@@ -13,9 +13,8 @@
 	display: block;
 	padding: 0.2em 1em;
 	border: 1px solid $color-deep-dark;
-	border-radius: 4px;
+	border-radius: $gap-sm;
 	transition: all .25s ease-in-out;
-	min-width: $gap-x4;
 	text-align: center;
 	user-select: none;
 	@include box-shadow(0, 0, $gap-sm, $color-gray-dark);

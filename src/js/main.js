@@ -1,9 +1,6 @@
 function Carousel() {
-
   this.container = document.querySelector('#carousel');
   this.slides = this.container.querySelectorAll('.slide');
-  this.indicatorsContainer = this.container.querySelector('.indicators');
-  this.indicators = this.indicatorsContainer.querySelectorAll('.indicator');
 }
 
 Carousel.prototype = {
@@ -26,6 +23,7 @@ Carousel.prototype = {
     this._initProps();
     this._tick();
     this._initControls();
+    this._initIndicators();
     this._initListeners();
   },
 
@@ -43,17 +41,21 @@ Carousel.prototype = {
     this.FA_NEXT = '<i class="fa-solid fa-chevron-right"></i>';
   },
 
-  _initControls() {
+  _goToNth(n) {
+    this.slides[this.currentSlide].classList.toggle('active');
+    this.indicators[this.currentSlide].classList.toggle('active');
+    this.currentSlide = (n + this.SLIDES_LENGTH) % this.SLIDES_LENGTH;
+    this.slides[this.currentSlide].classList.toggle('active');
+    this.indicators[this.currentSlide].classList.toggle('active');
+  },
 
+  _initControls() {
     const controls = document.createElement('div');
     controls.setAttribute('class', 'controls');
-
     const PREV = `<span class="control control__prev" id="prev">${this.FA_Prev}</span>`;
     const PAUSE_PLAY = `<span class="control control__pause" id="pause">${this.FA_PAUSE}</span>`;
     const NEXT = `<span class="control control__next" id="next">${this.FA_NEXT}</span>`;
-
     controls.innerHTML = PREV + PAUSE_PLAY + NEXT;
-
     this.container.append(controls);
 
     this.pauseBtn = this.container.querySelector('#pause');
@@ -61,12 +63,45 @@ Carousel.prototype = {
     this.nextBtn = this.container.querySelector('#next');
   },
 
-  _goToNth(n) {
-    this.slides[this.currentSlide].classList.toggle('active');
-    this.indicators[this.currentSlide].classList.toggle('active');
-    this.currentSlide = (n + this.SLIDES_LENGTH) % this.SLIDES_LENGTH;
-    this.slides[this.currentSlide].classList.toggle('active');
-    this.indicators[this.currentSlide].classList.toggle('active');
+  _initIndicators() {
+    const indicators = document.createElement('div');
+    indicators.setAttribute('class', 'indicators');
+
+    for (let i = 0; i < this.SLIDES_LENGTH; i++) {
+      const indicator = document.createElement('div');
+      indicator.setAttribute('class', i !== 0 ? 'indicator' : 'indicator active');
+      indicator.dataset.slideTo = `${i}`;
+
+      indicators.append(indicator);
+    }
+
+    // for (let i = 0; i < this.SLIDES_LENGTH; i++) {
+    //   const indicator = document.createElement('div');
+    //   indicator.setAttribute('class', 'indicator');
+    //
+    //   this.indicators.append(indicator);
+    // }
+
+    this.container.append(indicators);
+
+    this.indicatorsContainer = this.container.querySelector('.indicators');
+    this.indicators = this.indicatorsContainer.querySelectorAll('.indicator');
+
+    //   <div className="indicator  active" data-slide-to="0"></div>
+    //   <div className="indicator" data-slide-to="1"></div>
+    //   <div className="indicator" data-slide-to="2"></div>
+    //   <div className="indicator" data-slide-to="3"></div>
+    //   <div className="indicator" data-slide-to="4"></div>
+  },
+
+  _initListeners() {
+    this.pauseBtn.addEventListener('click', this.pausePlay.bind(this));
+    this.prevBtn.addEventListener('click', this.prev.bind(this));
+    this.nextBtn.addEventListener('click', this.next.bind(this));
+    this.indicatorsContainer.addEventListener('click', this._indicate.bind(this));
+    this.container.addEventListener('touchstart', this._swipeStart.bind(this));
+    this.container.addEventListener('touchend', this._swipeEnd.bind(this));
+    document.addEventListener('keydown', this._pressKey.bind(this));
   },
 
   _goToPrev() {
@@ -112,16 +147,6 @@ Carousel.prototype = {
     this.swipeEndX = e.changedTouches[0].clientX;
     if (this.swipeStartX - this.swipeEndX < -50) this.prev();
     if (this.swipeStartX - this.swipeEndX > 50) this.next();
-  },
-
-  _initListeners() {
-    this.pauseBtn.addEventListener('click', this.pausePlay.bind(this));
-    this.prevBtn.addEventListener('click', this.prev.bind(this));
-    this.nextBtn.addEventListener('click', this.next.bind(this));
-    this.indicatorsContainer.addEventListener('click', this._indicate.bind(this));
-    this.container.addEventListener('touchstart', this._swipeStart.bind(this));
-    this.container.addEventListener('touchend', this._swipeEnd.bind(this));
-    document.addEventListener('keydown', this._pressKey.bind(this));
   },
 
   _tick() {
