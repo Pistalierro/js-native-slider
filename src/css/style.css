@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -335,6 +336,19 @@ template {
 /* 60px */
 /* 80px */
 /* 100px */
+.container {
+  width: min(100% - 40px, 1300px);
+
+  margin-inline: auto;
+}
+
+h1,
+h2,
+h3,
+p {
+  text-shadow: 0 0 10px #000000, 0 0 20px #000000, 0 0 40px #000000;
+}
+
 *::before,
 *::after,
 * {
@@ -350,14 +364,15 @@ body {
   font-size: 16px;
 }
 
-a {
-  text-decoration: none;
+h1,
+h2,
+h3,
+p {
+  text-align: center;
 }
 
-.container {
-  width: min(100% - 40px, 1300px);
-
-  margin-inline: auto;
+a {
+  text-decoration: none;
 }
 
 .carousel {
@@ -396,6 +411,7 @@ a {
 .control:hover,
 .control:focus {
   color: #ffffff;
+  text-shadow: 0 0 20px #ffffff;
 }
 .control__prev {
   position: absolute;
@@ -414,8 +430,8 @@ a {
   height: 100%;
 }
 .control__prev:hover {
-  background: -webkit-gradient(linear, right top, left top, color-stop(20%, transparent), to(rgba(255, 255, 255, 0.25)));
-  background: linear-gradient(to left, transparent 20%, rgba(255, 255, 255, 0.25));
+  background: -webkit-gradient(linear, right top, left top, color-stop(20%, transparent), to(rgba(3, 254, 141, 0.25)));
+  background: linear-gradient(to left, transparent 20%, rgba(3, 254, 141, 0.25));
 }
 .control__play {
   position: absolute;
@@ -453,8 +469,8 @@ a {
   transition: 0.25s;
 }
 .control__next:hover {
-  background: -webkit-gradient(linear, left top, right top, color-stop(20%, transparent), to(rgba(255, 255, 255, 0.25)));
-  background: linear-gradient(to right, transparent 20%, rgba(255, 255, 255, 0.25));
+  background: -webkit-gradient(linear, left top, right top, color-stop(20%, transparent), to(rgba(3, 254, 141, 0.25)));
+  background: linear-gradient(to right, transparent 20%, rgba(3, 254, 141, 0.25));
 }
 
 .indicators {
@@ -515,6 +531,21 @@ a {
   bottom: 0;
   left: 0;
 
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+
   padding: 40px;
 
   -webkit-transition: all 0.25s;
@@ -522,11 +553,42 @@ a {
   transition: all 0.25s;
 
   opacity: 0;
+  color: #03fe8d;
   background-color: #165690;
   background-position: 50% 50%;
   background-size: cover;
 
   font-size: 40px;
+}
+.slide:nth-last-of-type(3) h3 {
+  text-align: left;
+}
+.slide:nth-last-of-type(3) li {
+  position: relative;
+
+  margin-bottom: 10px;
+  padding-left: 25px;
+
+  text-shadow: 0 0 20px #000000;
+
+  font-family: Arial, sans-serif;
+  font-size: 1.5rem;
+}
+.slide:nth-last-of-type(3) li::before {
+  position: absolute;
+  left: 0;
+
+  content: "✔"; /* Кастомный символ */
+
+  color: #026c4f;
+
+  font-size: 20px; /* Размер маркера */
+}
+.slide ul {
+  margin: 0 0 0 600px;
+  padding: 0;
+
+  list-style: none;
 }
 .slide.active {
   opacity: 1;

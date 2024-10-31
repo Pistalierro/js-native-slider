@@ -21,6 +21,7 @@
 	&:hover,
 	&:focus {
 		color: $color-light;
+		@include text-shadow(0, 0, $gap, $color-light)
 	}
 
 	&__prev {
@@ -32,7 +33,7 @@
 		align-items: center;
 
 		&:hover {
-			background: linear-gradient(to left, transparent 20%, rgba($color-light, .25));
+			background: linear-gradient(to left, transparent 20%, rgba($color-text, .25));
 		}
 	}
 
@@ -43,6 +44,7 @@
 		transform: translate(-50%, -50%);
 		border-radius: 50%;
 		font-size: 5rem;
+
 	}
 
 	&__next {
@@ -55,7 +57,7 @@
 		transition: .25s;
 
 		&:hover {
-			background: linear-gradient(to right, transparent 20%, rgba($color-light, .25));
+			background: linear-gradient(to right, transparent 20%, rgba($color-text, .25));
 		}
 
 	}

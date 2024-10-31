@@ -7,7 +7,7 @@
 }
 
 %text-shadow {
-	text-shadow: 0 0 10px $color-black, 0 0 20px $color-black, 0 0 40px $color-black;
+	text-shadow: 0 0 $gap-sm $color-black, 0 0 $gap $color-black, 0 0 $gap-x2 $color-black;
 }
 
 %box-shadow {

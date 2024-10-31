@@ -1,6 +1,6 @@
 export default class Carousel {
   constructor(p) {
-    const s = ({...{containerID: '#carousel', slideID: '.slide', interval: 5000, isPlaying: true}, ...p});
+    const s = ({...{containerID: '#carousel', slideID: '.slide', interval: 3000, isPlaying: true}, ...p});
     this.container = document.querySelector(s.containerID);
     this.slides = this.container.querySelectorAll(s.slideID);
     this.interval = s.interval;

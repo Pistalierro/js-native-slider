@@ -1,12 +1,11 @@
 @use "../presets/variables" as *;
 @use "../presets/skin" as *;
 @use "../mixins/mixins" as *;
+@use "../mixins/extends" as *;
 
 .slides {
 	position: relative;
-	//height: $gap-x5 * 2;
 	min-height: 100vh;
-	//@include list-none(0 0 $gap 0);
 	@include list-none;
 }
 
@@ -19,7 +18,41 @@
 	background-size: cover;
 	opacity: 0;
 	z-index: -9999;
+
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	justify-content: space-between;
+
 	transition: all .25s;
+	color: $color-text;
+
+	&:nth-last-of-type(3) {
+		h3 {
+			text-align: left;
+		}
+
+		li {
+			@include text-shadow(0, 0, $gap, $color-black);
+			margin-bottom: $gap-sm;
+			font-family: Arial, sans-serif;
+			font-size: 1.5rem;
+			position: relative;
+			padding-left: 25px;
+
+			&::before {
+				content: "✔"; /* Кастомный символ */
+				position: absolute;
+				left: 0;
+				color: #026C4F;
+				font-size: 20px; /* Размер маркера */
+			}
+		}
+	}
+
+	ul {
+		@include list-none(0 0 0 $gap-x5 * 6)
+	}
 
 	&.active {
 		opacity: 1;
