@@ -11,7 +11,6 @@
 
 .slide {
 	@include abs-position;
-	font-size: $gap-x2;
 	padding: $gap-x2;
 	background-color: $color-primary;
 	background-position: 50% 50%;
@@ -23,29 +22,30 @@
 	flex-direction: column;
 	align-content: center;
 	justify-content: space-between;
+	text-align: center;
+	@include text-shadow(0, 0, $gap-lg, $color-black);
 
 	transition: all .25s;
 	color: $color-text;
 
 	&:nth-last-of-type(3) {
-		h3 {
-			text-align: left;
-		}
-
 		li {
 			@include text-shadow(0, 0, $gap, $color-black);
 			margin-bottom: $gap-sm;
 			font-family: Arial, sans-serif;
-			font-size: 1.5rem;
+			font-size: 2.5rem;
 			position: relative;
-			padding-left: 25px;
+			padding-left: $gap-x2;
+			text-align: left;
+			display: flex;
 
 			&::before {
-				content: "✔"; /* Кастомный символ */
+				content: "✔";
 				position: absolute;
+				top: 0.5rem;
 				left: 0;
 				color: #026C4F;
-				font-size: 20px; /* Размер маркера */
+				font-size: 2.5rem;
 			}
 		}
 	}

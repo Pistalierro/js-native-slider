@@ -342,13 +342,6 @@ template {
   margin-inline: auto;
 }
 
-h1,
-h2,
-h3,
-p {
-  text-shadow: 0 0 10px #000000, 0 0 20px #000000, 0 0 40px #000000;
-}
-
 *::before,
 *::after,
 * {
@@ -364,11 +357,12 @@ body {
   font-size: 16px;
 }
 
-h1,
-h2,
-h3,
+h2 {
+  font-size: 5rem;
+}
+
 p {
-  text-align: center;
+  font-size: 2.5rem;
 }
 
 a {
@@ -551,38 +545,44 @@ a {
   -webkit-transition: all 0.25s;
 
   transition: all 0.25s;
+  text-align: center;
 
   opacity: 0;
   color: #03fe8d;
   background-color: #165690;
   background-position: 50% 50%;
   background-size: cover;
-
-  font-size: 40px;
-}
-.slide:nth-last-of-type(3) h3 {
-  text-align: left;
+  text-shadow: 0 0 15px #000000;
 }
 .slide:nth-last-of-type(3) li {
   position: relative;
 
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
+  display: flex;
+
   margin-bottom: 10px;
-  padding-left: 25px;
+  padding-left: 40px;
+
+  text-align: left;
 
   text-shadow: 0 0 20px #000000;
 
   font-family: Arial, sans-serif;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
 }
 .slide:nth-last-of-type(3) li::before {
   position: absolute;
+  top: 0.5rem;
   left: 0;
 
-  content: "✔"; /* Кастомный символ */
+  content: "✔";
 
   color: #026c4f;
 
-  font-size: 20px; /* Размер маркера */
+  font-size: 2.5rem;
 }
 .slide ul {
   margin: 0 0 0 600px;

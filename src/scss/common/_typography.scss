@@ -17,10 +17,17 @@ body {
 	font-size: $font-size;
 }
 
-h1, h2, h3, p {
-	text-align: center;
-	@extend %text-shadow;
+h2 {
+	font-size: 5rem;
 }
+
+p {
+	font-size: 2.5rem;
+}
+
+//h1, h2, h3 {
+//	font-family: $font-header;
+//}
 
 a {
 	text-decoration: none;
