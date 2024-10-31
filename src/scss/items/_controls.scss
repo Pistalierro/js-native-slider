@@ -5,24 +5,54 @@
 .controls {
 	display: flex;
 	gap: $gap;
-	justify-content: center;
 }
 
 .control {
 	cursor: pointer;
 	display: block;
-	padding: 0.2em 1em;
-	border: 1px solid $color-deep-dark;
-	border-radius: $gap-sm;
+	padding: 0.7em 1em;
 	transition: all .25s ease-in-out;
 	text-align: center;
 	user-select: none;
-	@include box-shadow(0, 0, $gap-sm, $color-gray-dark);
+	font-size: 2rem;
+	color: $color-light;
+	transform: translateY(-50%);
 
 	&:hover,
 	&:focus {
-		background-color: $color-gray-dark;
+		@include box-shadow(0, 0, $gap, $color-gray-dark);
 		color: $color-light;
-		border-color: $color-gray-dark;
+	}
+
+	&__prev {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		height: 100%;
+		display: flex;
+		align-items: center;
+	}
+
+	&__pause {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		opacity: 1;
+		border-radius: 50%;
+
+		&:hover,
+		&:focus {
+			opacity: 1;
+		}
+	}
+
+	&__next {
+		position: absolute;
+		top: 50%;
+		right: 0;
+		height: 100%;
+		display: flex;
+		align-items: center;
 	}
 }

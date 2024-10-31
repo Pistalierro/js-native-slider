@@ -368,9 +368,6 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 
   gap: 20px;
 }
@@ -378,7 +375,7 @@ a {
 .control {
   display: block;
 
-  padding: 0.2em 1em;
+  padding: 0.7em 1em;
 
   cursor: pointer;
   -webkit-user-select: none;
@@ -387,23 +384,75 @@ a {
           user-select: none;
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
   text-align: center;
 
-  border: 1px solid #191919;
-  border-radius: 10px;
-  -webkit-box-shadow: 0 0 10px #6f6f6f;
-          box-shadow: 0 0 10px #6f6f6f;
+  color: #ffffff;
+
+  font-size: 2rem;
 }
 .control:hover,
 .control:focus {
   color: #ffffff;
-  border-color: #6f6f6f;
-  background-color: #6f6f6f;
+  -webkit-box-shadow: 0 0 20px #6f6f6f;
+          box-shadow: 0 0 20px #6f6f6f;
+}
+.control__prev {
+  position: absolute;
+  top: 50%;
+  left: 0;
+
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+
+  height: 100%;
+}
+.control__pause {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  -webkit-transform: translate(-50%, -50%);
+
+      -ms-transform: translate(-50%, -50%);
+
+          transform: translate(-50%, -50%);
+
+  opacity: 1;
+  border-radius: 50%;
+}
+.control__pause:hover,
+.control__pause:focus {
+  opacity: 1;
+}
+.control__next {
+  position: absolute;
+  top: 50%;
+  right: 0;
+
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+
+  height: 100%;
 }
 
 .indicators {
   position: absolute;
-  bottom: 60px;
+  bottom: 20px;
   left: 50%;
 
   display: -webkit-box;
@@ -444,9 +493,11 @@ a {
 .slides {
   position: relative;
 
-  height: 200px;
-  margin: 20px 0 20px 0;
+  min-height: 100vh;
+  margin: 0;
   padding: 0;
+
+  list-style: none;
 }
 
 .slide {
@@ -464,8 +515,7 @@ a {
   transition: all 0.25s;
 
   opacity: 0;
-  background: #333333;
-  background: #165690;
+  background-color: #165690;
   background-position: 50% 50%;
   background-size: cover;
 

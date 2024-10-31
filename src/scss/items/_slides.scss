@@ -4,16 +4,17 @@
 
 .slides {
 	position: relative;
-	height: $gap-x5 * 2;
-	@include list-none($gap 0 $gap 0);
+	//height: $gap-x5 * 2;
+	min-height: 100vh;
+	//@include list-none(0 0 $gap 0);
+	@include list-none;
 }
 
 .slide {
 	@include abs-position;
 	font-size: $gap-x2;
 	padding: $gap-x2;
-	background: #333;
-	background: $color-primary;
+	background-color: $color-primary;
 	background-position: 50% 50%;
 	background-size: cover;
 	opacity: 0;

@@ -146,7 +146,7 @@ async function clearFolder() {
 }
 
 exports.min = scssMin;
-exports.scss = series(scss, scssMin);
+exports.scss = series(scss);
 exports.comb = comb;
 exports.concat = concatJS;
 exports.uglify = uglifyJS;
