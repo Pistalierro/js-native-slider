@@ -1,4 +1,6 @@
-class SwipeCarousel extends Carousel {
+import Carousel from './carousel.js';
+
+export default class SwipeCarousel extends Carousel {
   _initListeners() {
     super._initListeners();
     this.container.addEventListener('touchstart', this._swipeStart.bind(this));

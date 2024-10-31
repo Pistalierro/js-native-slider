@@ -1,4 +1,4 @@
-class Carousel {
+export default class Carousel {
   constructor(containerID = '#carousel', slideID = '.slide') {
     this.container = document.querySelector(containerID);
     this.slides = this.container.querySelectorAll(slideID);
