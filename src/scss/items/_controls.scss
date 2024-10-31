@@ -11,16 +11,15 @@
 	cursor: pointer;
 	display: block;
 	padding: 0.7em 1em;
-	transition: all .25s ease-in-out;
 	text-align: center;
 	user-select: none;
-	font-size: 2rem;
-	color: $color-light;
+	font-size: 3rem;
+	color: rgba($color-light, .5);
 	transform: translateY(-50%);
+	transition: all .25s ease-in-out;
 
 	&:hover,
 	&:focus {
-		@include box-shadow(0, 0, $gap, $color-gray-dark);
 		color: $color-light;
 	}
 
@@ -31,20 +30,19 @@
 		height: 100%;
 		display: flex;
 		align-items: center;
+
+		&:hover {
+			background: linear-gradient(to left, transparent 20%, rgba($color-light, .25));
+		}
 	}
 
-	&__pause {
+	&__play {
 		position: absolute;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		opacity: 1;
 		border-radius: 50%;
-
-		&:hover,
-		&:focus {
-			opacity: 1;
-		}
+		font-size: 5rem;
 	}
 
 	&__next {
@@ -54,5 +52,11 @@
 		height: 100%;
 		display: flex;
 		align-items: center;
+		transition: .25s;
+
+		&:hover {
+			background: linear-gradient(to right, transparent 20%, rgba($color-light, .25));
+		}
+
 	}
 }
