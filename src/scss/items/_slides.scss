@@ -7,6 +7,7 @@
 	position: relative;
 	min-height: 100vh;
 	@include list-none;
+	overflow: hidden;
 }
 
 .slide {
