@@ -12,13 +12,13 @@
 
 .slide {
 	@include abs-position;
-	padding: $gap-x2;
+	padding: 1em;
 	background-color: $color-primary;
 	background-position: 50% 50%;
 	background-size: cover;
 	opacity: 0;
 	z-index: -9999;
-	background-attachment: fixed;
+	background-attachment: scroll;
 
 	display: flex;
 	flex-direction: column;
@@ -35,15 +35,13 @@
 		background-position: center bottom;
 	}
 
-	// Анимации для текста
-	.slide__title,
-	.slide__description {
+	&__title,
+	&__descroption {
 		opacity: 0;
 		animation-duration: 1s;
 		animation-fill-mode: forwards;
 	}
 
-	// Анимации с разными направлениями
 	@keyframes slideInLeft {
 		from {
 			transform: translateX(-100%);

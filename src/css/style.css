@@ -546,7 +546,7 @@ a {
       -ms-flex-pack: justify;
           justify-content: space-between;
 
-  padding: 40px;
+  padding: 1em;
 
   -webkit-transition: opacity 0.5s, background-position 2s ease;
 
@@ -556,7 +556,7 @@ a {
   opacity: 0;
   color: #03fe8d;
   background-color: #165690;
-  background-attachment: fixed;
+  background-attachment: scroll;
   background-position: 50% 50%;
   background-size: cover;
   text-shadow: 0 0 15px #000000;
@@ -565,8 +565,8 @@ a {
   opacity: 1;
   background-position: center bottom;
 }
-.slide .slide__title,
-.slide .slide__description {
+.slide__title,
+.slide__descroption {
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
 
