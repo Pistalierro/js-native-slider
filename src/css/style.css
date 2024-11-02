@@ -361,6 +361,10 @@ h2 {
   font-size: 5rem;
 }
 
+h3 {
+  font-size: 3rem;
+}
+
 p {
   font-size: 2.5rem;
 }
@@ -542,17 +546,183 @@ a {
 
   padding: 40px;
 
-  -webkit-transition: all 0.25s;
+  -webkit-transition: opacity 0.5s, background-position 2s ease;
 
-  transition: all 0.25s;
+  transition: opacity 0.5s, background-position 2s ease;
   text-align: center;
 
   opacity: 0;
   color: #03fe8d;
   background-color: #165690;
+  background-attachment: fixed;
   background-position: 50% 50%;
   background-size: cover;
   text-shadow: 0 0 15px #000000;
+}
+.slide.active {
+  opacity: 1;
+  background-position: center bottom;
+}
+.slide .slide__title,
+.slide .slide__description {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+
+  opacity: 0;
+
+  -webkit-animation-fill-mode: forwards;
+
+          animation-fill-mode: forwards;
+}
+@-webkit-keyframes slideInLeft {
+  from {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+
+    opacity: 1;
+  }
+}
+@keyframes slideInLeft {
+  from {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+
+    opacity: 1;
+  }
+}
+@-webkit-keyframes slideInRight {
+  from {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+
+    opacity: 1;
+  }
+}
+@keyframes slideInRight {
+  from {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+
+    opacity: 1;
+  }
+}
+@-webkit-keyframes slideInTop {
+  from {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+
+    opacity: 1;
+  }
+}
+@keyframes slideInTop {
+  from {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+
+    opacity: 1;
+  }
+}
+@-webkit-keyframes slideInBottom {
+  from {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+
+    opacity: 1;
+  }
+}
+@keyframes slideInBottom {
+  from {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+
+    opacity: 1;
+  }
+}
+.slide .slide--left {
+  -webkit-animation-name: slideInLeft;
+          animation-name: slideInLeft;
+}
+.slide .slide--right {
+  -webkit-animation-name: slideInRight;
+          animation-name: slideInRight;
+}
+.slide .slide--top {
+  -webkit-animation-name: slideInTop;
+          animation-name: slideInTop;
+}
+.slide .slide--bottom {
+  -webkit-animation-name: slideInBottom;
+          animation-name: slideInBottom;
+}
+.slide ul {
+  margin: 0 0 0 600px;
+  padding: 0;
+
+  list-style: none;
+}
+.slide__contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+
+  font-size: 1.5rem;
+
+  gap: 40px;
+}
+.slide__contacts i {
+  margin-right: 10px;
+
+  color: #03fe8d;
 }
 .slide:nth-last-of-type(3) li {
   position: relative;
@@ -564,7 +734,7 @@ a {
   display: flex;
 
   margin-bottom: 10px;
-  padding-left: 40px;
+  padding-left: 60px;
 
   text-align: left;
 
@@ -575,7 +745,7 @@ a {
 }
 .slide:nth-last-of-type(3) li::before {
   position: absolute;
-  top: 0.5rem;
+  top: 5px;
   left: 0;
 
   content: "✔";
@@ -583,13 +753,4 @@ a {
   color: #026c4f;
 
   font-size: 2.5rem;
-}
-.slide ul {
-  margin: 0 0 0 600px;
-  padding: 0;
-
-  list-style: none;
-}
-.slide.active {
-  opacity: 1;
 }

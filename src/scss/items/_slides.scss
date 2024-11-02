@@ -17,6 +17,7 @@
 	background-size: cover;
 	opacity: 0;
 	z-index: -9999;
+	background-attachment: fixed;
 
 	display: flex;
 	flex-direction: column;
@@ -25,8 +26,99 @@
 	text-align: center;
 	@include text-shadow(0, 0, $gap-lg, $color-black);
 
-	transition: all .25s;
+	transition: opacity .5s, background-position 2s ease;
 	color: $color-text;
+
+	&.active {
+		opacity: 1;
+		background-position: center bottom;
+	}
+
+	// Анимации для текста
+	.slide__title,
+	.slide__description {
+		opacity: 0;
+		animation-duration: 1s;
+		animation-fill-mode: forwards;
+	}
+
+	// Анимации с разными направлениями
+	@keyframes slideInLeft {
+		from {
+			transform: translateX(-100%);
+			opacity: 0;
+		}
+		to {
+			transform: translateX(0);
+			opacity: 1;
+		}
+	}
+
+	@keyframes slideInRight {
+		from {
+			transform: translateX(100%);
+			opacity: 0;
+		}
+		to {
+			transform: translateX(0);
+			opacity: 1;
+		}
+	}
+
+	@keyframes slideInTop {
+		from {
+			transform: translateY(-100%);
+			opacity: 0;
+		}
+		to {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
+
+	@keyframes slideInBottom {
+		from {
+			transform: translateY(100%);
+			opacity: 0;
+		}
+		to {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
+
+	.slide--left {
+		animation-name: slideInLeft;
+	}
+
+	.slide--right {
+		animation-name: slideInRight;
+	}
+
+	.slide--top {
+		animation-name: slideInTop;
+	}
+
+	.slide--bottom {
+		animation-name: slideInBottom;
+	}
+
+
+	ul {
+		@include list-none(0 0 0 $gap-x5 * 6);
+	}
+
+	&__contacts {
+		display: flex;
+		gap: $gap-x2;
+		font-size: 1.5rem;
+		justify-content: space-around;
+
+		i {
+			margin-right: $gap-sm;
+			color: $color-text;
+		}
+	}
 
 	&:nth-last-of-type(3) {
 		li {
@@ -35,26 +127,18 @@
 			font-family: Arial, sans-serif;
 			font-size: 2.5rem;
 			position: relative;
-			padding-left: $gap-x2;
+			padding-left: $gap-x3;
 			text-align: left;
 			display: flex;
 
 			&::before {
 				content: "✔";
 				position: absolute;
-				top: 0.5rem;
+				top: 5px;
 				left: 0;
 				color: #026C4F;
 				font-size: 2.5rem;
 			}
 		}
-	}
-
-	ul {
-		@include list-none(0 0 0 $gap-x5 * 6)
-	}
-
-	&.active {
-		opacity: 1;
 	}
 }

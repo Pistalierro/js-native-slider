@@ -145,13 +145,13 @@ async function clearFolder() {
   return del([PATH.buildFolder], {force: true});
 }
 
+exports.watch = watchFiles;
+exports.scss = scss;
 exports.min = scssMin;
-exports.scss = series(scss);
 exports.comb = comb;
 exports.concat = concatJS;
 exports.uglify = uglifyJS;
 exports.del = clearFolder;
 exports.build = series(clearFolder, parallel(buildHTML, buildCSS, buildJS));
 exports.lint = lintJS;
-exports.watch = watchFiles;
 exports.watchDev = watchDevFiles;

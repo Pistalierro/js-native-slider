@@ -4,7 +4,7 @@ const carousel = new SwipeCarousel({
   containerID: '#carousel',
   slideID: '.slide',
   interval: 5000,
-  isPlaying: false,
+  // isPlaying: false,
 });
 
 carousel.init();

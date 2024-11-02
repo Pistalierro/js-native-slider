@@ -27,6 +27,7 @@ export default class Carousel {
     this._initControls();
     this._initIndicators();
     this._initListeners();
+    this._applyAnimation(this.slides[this.currentSlide]);
   }
 
   _initProps() {
@@ -45,9 +46,11 @@ export default class Carousel {
   _goToNth(n) {
     this.slides[this.currentSlide].classList.toggle('active');
     this.indicators[this.currentSlide].classList.toggle('active');
+    this._applyAnimation(this.slides[this.currentSlide]);
     this.currentSlide = (n + this.SLIDES_LENGTH) % this.SLIDES_LENGTH;
     this.slides[this.currentSlide].classList.toggle('active');
     this.indicators[this.currentSlide].classList.toggle('active');
+    this._applyAnimation(this.slides[this.currentSlide]);
   }
 
   _initControls() {
@@ -124,7 +127,27 @@ export default class Carousel {
     const target = e.target;
     if (target === this.container || target.classList.contains('slides'))
       this.pausePlay();
+  }
 
+  _applyAnimation(slide) {
+    if (!slide.classList.contains('active')) return;
+
+    const title = slide.querySelector('.slide__title');
+    const description = slide.querySelector('.slide__description');
+
+    if (title) {
+      title.classList.remove('slide--left', 'slide--right', 'slide--top', 'slide--bottom');
+      setTimeout(() => {
+        title.classList.add(title.dataset.direction || 'slide--left');
+      }, 50);
+    }
+
+    if (description) {
+      description.classList.remove('slide--left', 'slide--right', 'slide--top', 'slide--bottom');
+      setTimeout(() => {
+        description.classList.add(description.dataset.direction || 'slide--right');
+      }, 50);
+    }
   }
 
   _initListeners() {

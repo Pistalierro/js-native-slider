@@ -7,11 +7,11 @@ export default class SwipeCarousel extends Carousel {
     this.container.addEventListener('touchend', this._swipeEnd.bind(this));
   };
 
-  _swipeStart = function (e) {
+  _swipeStart(e) {
     this.swipeStartX = e.changedTouches[0].clientX;
   };
 
-  _swipeEnd = function (e) {
+  _swipeEnd(e) {
     this.swipeEndX = e.changedTouches[0].clientX;
     if (this.swipeStartX - this.swipeEndX < -50) this.prev();
     if (this.swipeStartX - this.swipeEndX > 50) this.next();
