@@ -703,8 +703,12 @@ a {
   list-style: none;
 }
 .slide__contacts {
+  position: relative;
+
   display: -webkit-box;
+
   display: -ms-flexbox;
+
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -751,12 +755,6 @@ a {
   .control__play {
     font-size: 5rem;
   }
-  .slide__contacts {
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-
-    font-size: 1.25rem;
-  }
 }
 @media (min-width: 992px) {
   p {
@@ -782,13 +780,23 @@ a {
     font-size: 4rem;
   }
   .slide__contacts {
-    font-size: 1.65rem;
+    font-size: 1.875rem;
   }
   .slide:nth-last-of-type(3) li {
     font-size: 2rem;
   }
   .slide:nth-last-of-type(3) li::before {
     font-size: 2rem;
+  }
+}
+@media (max-width: 991.8px) {
+  .slide__contacts {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+
+    font-size: 1.875rem;
   }
 }
 @media (max-width: 991.8px) and (min-width: 768px) {
@@ -811,14 +819,6 @@ a {
   }
   .control__play {
     font-size: 3rem;
-  }
-  .slide__contacts {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-
-    font-size: 1.5rem;
   }
 }
 @media (max-width: 767.8px) and (min-width: 576px) {

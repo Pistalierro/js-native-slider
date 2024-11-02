@@ -112,22 +112,18 @@
 		display: flex;
 		gap: $gap-x2;
 		justify-content: center;
+		position: relative;
 
 		@include xl-min {
 			font-size: 2rem;
 		}
 
 		@include xl-lg {
-			font-size: 1.65rem;
+			font-size: 1.875rem;
 		}
 
-		@include md-min {
-			font-size: 1.25rem;
-			justify-content: space-around;
-		}
-
-		@include md {
-			font-size: 1.5rem;
+		@include lg {
+			font-size: 1.875rem;
 			flex-direction: column;
 		}
 
