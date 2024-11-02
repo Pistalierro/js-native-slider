@@ -111,8 +111,25 @@
 	&__contacts {
 		display: flex;
 		gap: $gap-x2;
-		font-size: 1.25rem;
-		justify-content: space-around;
+		justify-content: center;
+
+		@include xl-min {
+			font-size: 2rem;
+		}
+
+		@include xl-lg {
+			font-size: 1.65rem;
+		}
+
+		@include md-min {
+			font-size: 1.25rem;
+			justify-content: space-around;
+		}
+
+		@include md {
+			font-size: 1.5rem;
+			flex-direction: column;
+		}
 
 		i {
 			margin-right: $gap-sm;
