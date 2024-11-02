@@ -1,6 +1,7 @@
 @use "../presets/variables" as *;
 @use "../presets/skin" as *;
 @use "../mixins/mixins" as *;
+@use "../mixins/mixins-media" as *;
 
 .controls {
 	display: flex;
@@ -13,10 +14,17 @@
 	padding: 0.7em 1em;
 	text-align: center;
 	user-select: none;
-	font-size: 3rem;
 	color: rgba($color-light, .5);
 	transform: translateY(-50%);
 	transition: all .25s ease-in-out;
+	@include md-min {
+		font-size: 3rem;
+	}
+
+	@include md {
+		font-size: 2rem;
+
+	}
 
 	&:hover,
 	&:focus {
@@ -43,8 +51,14 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 		border-radius: 50%;
-		font-size: 5rem;
 
+		@include md-min {
+			font-size: 5rem;
+		}
+
+		@include md {
+			font-size: 3rem;
+		}
 	}
 
 	&__next {

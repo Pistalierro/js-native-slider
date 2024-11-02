@@ -1,6 +1,7 @@
 @use "../presets/variables" as *;
 @use "../presets/skin" as *;
 @use "../mixins/mixins" as *;
+@use "../mixins/mixins-media" as *;
 @use "../mixins/extends" as *;
 
 .slides {
@@ -104,13 +105,13 @@
 
 
 	ul {
-		@include list-none(0 0 0 $gap-x5 * 6);
+		@include list-none;
 	}
 
 	&__contacts {
 		display: flex;
 		gap: $gap-x2;
-		font-size: 1.5rem;
+		font-size: 1.25rem;
 		justify-content: space-around;
 
 		i {
@@ -124,11 +125,30 @@
 			@include text-shadow(0, 0, $gap, $color-black);
 			margin-bottom: $gap-sm;
 			font-family: Arial, sans-serif;
-			font-size: 2.5rem;
 			position: relative;
 			padding-left: $gap-x3;
 			text-align: left;
 			display: flex;
+
+			@include xl-min {
+				font-size: 2.25rem;
+			}
+
+			@include xl-lg {
+				font-size: 2rem;
+			}
+
+			@include lg-md {
+				font-size: 1.75rem;
+			}
+
+			@include md-sm {
+				font-size: 1.5rem;
+			}
+
+			@include sm {
+				font-size: 1.25rem;
+			}
 
 			&::before {
 				content: "✔";
@@ -136,7 +156,25 @@
 				top: 5px;
 				left: 0;
 				color: #026C4F;
-				font-size: 2.5rem;
+
+				@include xl-min {
+					font-size: 2.25rem;
+				}
+
+				@include xl-lg {
+					font-size: 2rem;
+				}
+
+				@include lg-md {
+					font-size: 1.75rem;
+				}
+
+				@include md-sm {
+					font-size: 1.5rem;
+				}
+				@include sm {
+					font-size: 1.25rem;
+				}
 			}
 		}
 	}
