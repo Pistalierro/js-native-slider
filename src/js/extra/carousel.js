@@ -21,6 +21,11 @@ export default class Carousel {
     this.isPlaying ? this._pause() : this._play();
   }
 
+  setVh() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }
+
   init() {
     this._initProps();
     this._tick(this.isPlaying);
@@ -28,6 +33,7 @@ export default class Carousel {
     this._initIndicators();
     this._initListeners();
     this._applyAnimation(this.slides[this.currentSlide]);
+    this.setVh();
   }
 
   _initProps() {
@@ -157,6 +163,7 @@ export default class Carousel {
     this.indicatorsContainer.addEventListener('click', this._indicate.bind(this));
     this.container.addEventListener('click', this._clickPausePlay.bind(this));
     document.addEventListener('keydown', this._pressKey.bind(this));
+    window.addEventListener('resize', this.setVh.bind(this));
   }
 
   _tick(flag = true) {

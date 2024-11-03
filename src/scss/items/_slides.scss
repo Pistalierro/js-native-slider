@@ -5,10 +5,16 @@
 @use "../mixins/extends" as *;
 
 .slides {
-	position: relative;
-	min-height: 100vh;
 	@include list-none;
 	overflow: hidden;
+	position: relative;
+
+	@include sm-min {
+		min-height: 100vh;
+	}
+	@include sm {
+		min-height: calc(var(--vh, 1vh) * 100);
+	}
 }
 
 .slide {
@@ -108,31 +114,6 @@
 		@include list-none;
 	}
 
-	&__contacts {
-		display: flex;
-		gap: $gap-x2;
-		justify-content: center;
-		position: relative;
-
-		@include xl-min {
-			font-size: 2rem;
-		}
-
-		@include xl-lg {
-			font-size: 1.75rem;
-		}
-
-		@include lg {
-			font-size: 1.875rem;
-			flex-direction: column;
-		}
-
-		i {
-			margin-right: $gap-sm;
-			color: $color-text;
-		}
-	}
-
 	&:nth-last-of-type(3) {
 		li {
 			@include text-shadow(0, 0, $gap, $color-black);
@@ -148,19 +129,19 @@
 			}
 
 			@include xl-lg {
-				font-size: 2rem;
+				font-size: 1.875rem;
 			}
 
 			@include lg-md {
-				font-size: 1.75rem;
-			}
-
-			@include md-sm {
 				font-size: 1.5rem;
 			}
 
-			@include sm {
+			@include md-sm {
 				font-size: 1.25rem;
+			}
+
+			@include sm {
+				font-size: 0.875rem;
 			}
 
 			&::before {
@@ -186,9 +167,34 @@
 					font-size: 1.5rem;
 				}
 				@include sm {
-					font-size: 1.25rem;
+					font-size: 1rem;
 				}
 			}
+		}
+	}
+
+	&__contacts {
+		display: flex;
+		gap: $gap-x2;
+		justify-content: center;
+		position: relative;
+
+		@include xl-min {
+			font-size: 2rem;
+		}
+
+		@include xl-lg {
+			font-size: 1.5rem;
+		}
+
+		@include lg {
+			font-size: 1.5rem;
+			flex-direction: column;
+		}
+
+		i {
+			margin-right: $gap-sm;
+			color: $color-text;
 		}
 	}
 }

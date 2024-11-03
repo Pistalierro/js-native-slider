@@ -508,7 +508,6 @@ a {
 
   overflow: hidden;
 
-  min-height: 100vh;
   margin: 0;
   padding: 0;
 
@@ -702,25 +701,6 @@ a {
 
   list-style: none;
 }
-.slide__contacts {
-  position: relative;
-
-  display: -webkit-box;
-
-  display: -ms-flexbox;
-
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-
-  gap: 40px;
-}
-.slide__contacts i {
-  margin-right: 10px;
-
-  color: #03fe8d;
-}
 .slide:nth-last-of-type(3) li {
   position: relative;
 
@@ -748,6 +728,30 @@ a {
 
   color: #026c4f;
 }
+.slide__contacts {
+  position: relative;
+
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+
+  gap: 40px;
+}
+.slide__contacts i {
+  margin-right: 10px;
+
+  color: #03fe8d;
+}
+@media (min-width: 576px) {
+  .slides {
+    min-height: 100vh;
+  }
+}
 @media (min-width: 768px) {
   .control {
     font-size: 3rem;
@@ -765,28 +769,28 @@ a {
   h2 {
     font-size: 5rem;
   }
-  .slide__contacts {
-    font-size: 2rem;
-  }
   .slide:nth-last-of-type(3) li {
     font-size: 2.25rem;
   }
   .slide:nth-last-of-type(3) li::before {
     font-size: 2.25rem;
+  }
+  .slide__contacts {
+    font-size: 2rem;
   }
 }
 @media (max-width: 1199.8px) and (min-width: 992px) {
   h2 {
     font-size: 4rem;
   }
-  .slide__contacts {
-    font-size: 1.875rem;
-  }
   .slide:nth-last-of-type(3) li {
-    font-size: 2rem;
+    font-size: 1.875rem;
   }
   .slide:nth-last-of-type(3) li::before {
     font-size: 2rem;
+  }
+  .slide__contacts {
+    font-size: 1.5rem;
   }
 }
 @media (max-width: 991.8px) {
@@ -796,7 +800,7 @@ a {
         -ms-flex-direction: column;
             flex-direction: column;
 
-    font-size: 1.875rem;
+    font-size: 1.5rem;
   }
 }
 @media (max-width: 991.8px) and (min-width: 768px) {
@@ -807,7 +811,7 @@ a {
     font-size: 2rem;
   }
   .slide:nth-last-of-type(3) li {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
   .slide:nth-last-of-type(3) li::before {
     font-size: 1.75rem;
@@ -829,7 +833,7 @@ a {
     font-size: 1.5rem;
   }
   .slide:nth-last-of-type(3) li {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
   .slide:nth-last-of-type(3) li::before {
     font-size: 1.5rem;
@@ -842,10 +846,13 @@ a {
   p {
     font-size: 1.25rem;
   }
+  .slides {
+    min-height: calc(var(--vh, 1vh) * 100);
+  }
   .slide:nth-last-of-type(3) li {
-    font-size: 1.25rem;
+    font-size: 0.875rem;
   }
   .slide:nth-last-of-type(3) li::before {
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
 }
