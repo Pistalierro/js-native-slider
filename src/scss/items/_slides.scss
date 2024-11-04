@@ -226,9 +226,8 @@
 
 	&__contacts {
 		display: flex;
-		gap: $gap-x2;
+		gap: $gap;
 		justify-content: center;
-		position: relative;
 
 		@include xl-min {
 			font-size: 2rem;

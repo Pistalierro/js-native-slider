@@ -719,18 +719,14 @@ a {
   color: #026c4f;
 }
 .slide__contacts {
-  position: relative;
-
   display: -webkit-box;
-
   display: -ms-flexbox;
-
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 
-  gap: 40px;
+  gap: 20px;
 }
 .slide__contacts i {
   margin-right: 10px;
