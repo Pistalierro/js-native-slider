@@ -15,6 +15,10 @@
 	@include sm {
 		min-height: calc(var(--vh, 1vh) * 100);
 	}
+
+	@media (max-height: 500px) and (orientation: landscape) {
+		min-height: calc(var(--vh, 1vh) * 100);
+	}
 }
 
 .slide {
@@ -109,9 +113,49 @@
 		animation-name: slideInBottom;
 	}
 
+	&__title {
+		@include xl-min {
+			font-size: 5rem;
+		}
 
-	ul {
-		@include list-none;
+		@include xl-lg {
+			font-size: 4rem;
+		}
+
+		@include lg-md {
+			font-size: 3.5rem;
+		}
+
+		@include md-sm {
+			font-size: 2.5rem;
+		}
+
+		@include sm {
+			font-size: 1.5rem;
+		}
+
+		@media (max-height: 500px) and (orientation: landscape) {
+			font-size: 1.2rem;
+		}
+	}
+
+	&__description {
+		@include lg-min {
+			font-size: 2.5rem;
+		}
+		@include lg-md {
+			font-size: 2rem;
+		}
+		@include md-sm {
+			font-size: 1.5rem;
+		}
+		@include sm {
+			font-size: 1.25rem;
+		}
+
+		@media (max-height: 500px) and (orientation: landscape) {
+			font-size: 0.875rem;
+		}
 	}
 
 	&:nth-last-of-type(3) {
@@ -144,6 +188,10 @@
 				font-size: 0.875rem;
 			}
 
+			@media (max-height: 500px) and (orientation: landscape) {
+				font-size: 0.875rem;
+			}
+
 			&::before {
 				content: "✔";
 				position: absolute;
@@ -168,6 +216,9 @@
 				}
 				@include sm {
 					font-size: 1rem;
+				}
+				@media (max-height: 500px) and (orientation: landscape) {
+					font-size: 0.75rem;
 				}
 			}
 		}

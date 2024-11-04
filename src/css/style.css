@@ -357,10 +357,6 @@ body {
   font-size: 16px;
 }
 
-h3 {
-  font-size: 3rem;
-}
-
 p {
   margin: 0;
 }
@@ -695,12 +691,6 @@ a {
   -webkit-animation-name: slideInBottom;
           animation-name: slideInBottom;
 }
-.slide ul {
-  margin: 0;
-  padding: 0;
-
-  list-style: none;
-}
 .slide:nth-last-of-type(3) li {
   position: relative;
 
@@ -761,12 +751,12 @@ a {
   }
 }
 @media (min-width: 992px) {
-  p {
+  .slide__description {
     font-size: 2.5rem;
   }
 }
 @media (min-width: 1200px) {
-  h2 {
+  .slide__title {
     font-size: 5rem;
   }
   .slide:nth-last-of-type(3) li {
@@ -780,7 +770,7 @@ a {
   }
 }
 @media (max-width: 1199.8px) and (min-width: 992px) {
-  h2 {
+  .slide__title {
     font-size: 4rem;
   }
   .slide:nth-last-of-type(3) li {
@@ -804,10 +794,10 @@ a {
   }
 }
 @media (max-width: 991.8px) and (min-width: 768px) {
-  h2 {
+  .slide__title {
     font-size: 3.5rem;
   }
-  p {
+  .slide__description {
     font-size: 2rem;
   }
   .slide:nth-last-of-type(3) li {
@@ -826,10 +816,10 @@ a {
   }
 }
 @media (max-width: 767.8px) and (min-width: 576px) {
-  h2 {
+  .slide__title {
     font-size: 2.5rem;
   }
-  p {
+  .slide__description {
     font-size: 1.5rem;
   }
   .slide:nth-last-of-type(3) li {
@@ -840,19 +830,42 @@ a {
   }
 }
 @media (max-width: 575.8px) {
-  h2 {
-    font-size: 1.5rem;
-  }
-  p {
-    font-size: 1.25rem;
-  }
   .slides {
     min-height: calc(var(--vh, 1vh) * 100);
+  }
+  .slide__title {
+    font-size: 1.5rem;
+  }
+  .slide__description {
+    font-size: 1.25rem;
   }
   .slide:nth-last-of-type(3) li {
     font-size: 0.875rem;
   }
   .slide:nth-last-of-type(3) li::before {
     font-size: 1rem;
+  }
+}
+@media (max-height: 500px) and (orientation: landscape) {
+  .control {
+    font-size: 1.5rem;
+  }
+  .control__play {
+    font-size: 2rem;
+  }
+  .slides {
+    min-height: calc(var(--vh, 1vh) * 100);
+  }
+  .slide__title {
+    font-size: 1.2rem;
+  }
+  .slide__description {
+    font-size: 0.875rem;
+  }
+  .slide:nth-last-of-type(3) li {
+    font-size: 0.875rem;
+  }
+  .slide:nth-last-of-type(3) li::before {
+    font-size: 0.75rem;
   }
 }
